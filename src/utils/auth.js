@@ -11,10 +11,7 @@ const getTokenEndpoint = () => {
 }
 
 const getRedirectUri = () => {
-  if (import.meta.env.MODE === 'production') {
-    return 'https://coruscating-liger-22d87a.netlify.app/oauth/callback'
-  }
-  return 'http://localhost:5173/oauth/callback'
+  return `${window.location.origin}/oauth/callback`
 }
 
 const generateRandomString = (length) => {
